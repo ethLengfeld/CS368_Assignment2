@@ -1,3 +1,4 @@
+#Ethan Lengfeld
 CXX=g++
 CXXFLAGS = -Wall
 EXE = DemoBookDB

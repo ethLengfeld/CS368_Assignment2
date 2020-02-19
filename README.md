@@ -11,3 +11,6 @@ within BookDB.h and developed in BookDB.cpp.
 ## To Clean Program
 To remove executable and any .o files run the command 'make clean'
 Warning! This will delete the executable and will require rerunning 'make' to retest it
+
+
+Author: Ethan Lengfeld
