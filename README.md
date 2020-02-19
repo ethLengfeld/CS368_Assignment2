@@ -13,4 +13,4 @@ To remove executable and any .o files run the command 'make clean'
 Warning! This will delete the executable and will require rerunning 'make' to retest it
 
 
-Author: Ethan Lengfeld
+Author: Ethan Lengfeld - 9074020836
