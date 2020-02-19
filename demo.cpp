@@ -10,6 +10,7 @@
 //
 //
 // Online sources:   http://www.fredosaurus.com/notes-cpp/stl-containers/vector/vector-parameters.html
+//					 https://www.geeksforgeeks.org/g-fact-30/
 //
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -28,14 +29,14 @@ int main() {
 	double rating = 0;
 
 	double average = 0;
-	//vector<Book>* bookPtr;
+	vector<Book>* bookPtr;
 	int sortingMethod = 0;
 
 	int status = 0;
 
 	while (currCommand != 'q') {
 
-		cout << ">";
+		cout << "> ";
 		cin >> currCommand;
 
 		switch (currCommand) {
@@ -59,7 +60,6 @@ int main() {
 
 
 			case 'd':
-				//cout << "consider that book cancelled" << endl;
 				cin >> bookID;
 				status = BOOKDB::deleteBook(bookID, books);
 				if (!status) {
@@ -84,7 +84,6 @@ int main() {
 
 
 			case 'c':
-				//cout << "calculate average" << endl;
 				average = BOOKDB::calculateAverageRating(books);
 				if(average != -1) {
 					cout << "Average rating = " << average << endl;
@@ -95,25 +94,22 @@ int main() {
 
 
 			case 'f':
-				//cout << "print all books from my brithday year" << endl;
 				cin >> year;
-				//bookPtr = BOOKDB::findBooks(year, books);
-				if (!status) {
-					
+				bookPtr = BOOKDB::findBooks(year, books);
+				if (bookPtr->size() != 0) {
+					print(*bookPtr);
 				} else {
-					cout << "No entries found" << endl;
+					cout << "No entries" << endl;
 				}
+				// free heap memory
+				delete bookPtr;
 				break;
 
 
 			case 's':
-				//cout << "book sort" << endl;
 				cin >> sortingMethod;
-				cout << "Sorting Method " << sortingMethod << " was chosen" << endl;
 				status = BOOKDB::sortDB(books, sortingMethod);
-				if (!status) {
-					BOOKDB::print(books);
-				} else {
+				if (status) {
 					cout << "Error processing command" << endl;
 				}
 				break;

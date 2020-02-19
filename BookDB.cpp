@@ -56,16 +56,19 @@ int deleteBook(int bookID, vector<Book> &db) {
 	return 1;
 }
 
-// TODO
 vector<Book>* findBooks(int year, const vector<Book> &db) {
-	// error
-	// vector<Book> bookPtr;
 
-	// return &bookPtr;
-	return 0;
+	vector<Book>* bookPtr = new vector<Book>;
+
+	for (auto &currBook : db) {
+		if (currBook.year == year) {
+			bookPtr->push_back(currBook);
+		}
+	}	
+
+	return bookPtr;
 }
 
-// TODO
 double calculateAverageRating(const vector<Book> &db) {
 	double sum = 0;
 
@@ -76,11 +79,10 @@ double calculateAverageRating(const vector<Book> &db) {
 	if (sum != 0) {
 		return sum / db.size();
 	}
-
+	// error
 	return -1;
 }
 
-// TODO
 void print(const vector<Book> &db) {
 	if(db.size() != 0) {
 
@@ -93,32 +95,47 @@ void print(const vector<Book> &db) {
 	}
 }
 
-// TODO
+bool sortingMethod1(const Book &a, const Book &b) {
+	if(a.ID < b.ID) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+bool sortingMethod2(const Book &a, const Book &b) {
+	if(a.year < b.year) {
+		return true;
+	}
+	if (a.year > b.year) {
+		return false;
+	}
+	return a.ID < b.ID;
+}
+
+bool sortingMethod3(const Book &a, const Book &b) {
+	if(a.rating < b.rating) {
+		return true;
+	}
+	if (a.rating > b.rating) {
+		return false;
+	}
+	return a.ID < b.ID;
+}
+
 int sortDB(vector<Book> &db, int sortingMethod) {
-	// TODO create sorting methods
 	if(sortingMethod == 1) {
-		//sort(,sortingMethod1);
+		sort(db.begin(),db.end(),sortingMethod1);
 		return 0;
 	} else if (sortingMethod == 2) {
-		//sort(,sortingMethod2);
+		sort(db.begin(),db.end(),sortingMethod2);
 		return 0;
 	} else if (sortingMethod == 3) {
-		//sort(,sortingMethod3);
+		sort(db.begin(),db.end(),sortingMethod3);
 		return 0;
 	}
 	// error
 	return 1;
 }
 
-//int sortingMethod1() {
-//	
-//}
-
-//int sortingMethod2() {
-//
-//}
-
-//int sortingMethod3() {
-//
-//}
 
