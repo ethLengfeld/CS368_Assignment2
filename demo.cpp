@@ -38,18 +38,14 @@ int main() {
 		cout << ">";
 		cin >> currCommand;
 
-		//cout << "You printed " << currCommand << endl;
-
 		switch (currCommand) {
 
 			case 'p':
-				cout << "you want to print the current contents!" << endl;
 				BOOKDB::print(books);
 				break;
 
 
 			case 'a':
-				cout << "you're adding a book, great!" << endl;
 				cin >> bookID;
 				cin >> year;
 				cin >> rating;
@@ -63,7 +59,7 @@ int main() {
 
 
 			case 'd':
-				cout << "consider that book cancelled" << endl;
+				//cout << "consider that book cancelled" << endl;
 				cin >> bookID;
 				status = BOOKDB::deleteBook(bookID, books);
 				if (!status) {
@@ -75,7 +71,6 @@ int main() {
 
 
 			case 'u':
-				cout << "book update!" << endl;
 				cin >> bookID;
 				cin >> year;
 				cin >> rating;
@@ -89,7 +84,7 @@ int main() {
 
 
 			case 'c':
-				cout << "calculate average" << endl;
+				//cout << "calculate average" << endl;
 				average = BOOKDB::calculateAverageRating(books);
 				if(average != -1) {
 					cout << "Average rating = " << average << endl;
@@ -100,7 +95,7 @@ int main() {
 
 
 			case 'f':
-				cout << "print all books from my brithday year" << endl;
+				//cout << "print all books from my brithday year" << endl;
 				cin >> year;
 				//bookPtr = BOOKDB::findBooks(year, books);
 				if (!status) {
@@ -112,7 +107,7 @@ int main() {
 
 
 			case 's':
-				cout << "book sort" << endl;
+				//cout << "book sort" << endl;
 				cin >> sortingMethod;
 				cout << "Sorting Method " << sortingMethod << " was chosen" << endl;
 				status = BOOKDB::sortDB(books, sortingMethod);
