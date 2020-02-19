@@ -22,6 +22,7 @@ int addBook(int bookID, int year, double rating, vector<Book> &db) {
 
 	for (auto &currBook : db) {
 		if (currBook.ID == bookID) {
+			// error
 			return 1;
 		}
 	}
@@ -40,11 +41,17 @@ int updateBook(int bookID, int year, double rating, vector<Book> &db) {
 			return 0;
 		}
 	}
+	// error
 	return 1;
 }
 
-// TODO
 int deleteBook(int bookID, vector<Book> &db) {
+	for (auto currBookItr = db.begin(); currBookItr != db.end(); ++currBookItr) {
+		if (currBookItr->ID == bookID) {
+			db.erase(currBookItr);
+			return 0;
+		}
+	}
 	// error
 	return 1;
 }
@@ -60,9 +67,17 @@ vector<Book>* findBooks(int year, const vector<Book> &db) {
 
 // TODO
 double calculateAverageRating(const vector<Book> &db) {
-	double average = -1;
+	double sum = 0;
 
-	return average;
+	for (auto &currBook : db) {
+		sum += currBook.rating;
+	}
+
+	if (sum != 0) {
+		return sum / db.size();
+	}
+
+	return -1;
 }
 
 // TODO

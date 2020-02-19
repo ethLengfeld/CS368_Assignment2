@@ -14,3 +14,6 @@ Warning! This will delete the executable and will require rerunning 'make' to re
 
 
 Author: Ethan Lengfeld - 9074020836
+# TODO
+## The file should give a brief description of the program, the organization of the code,
+## how to compile the code, and how to run the program.
