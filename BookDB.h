@@ -13,10 +13,13 @@
 //
 ////////////////////////////////////////////////////////////////////////////////
 
+#ifndef BOOKDB
+#define BOOKDB
+
 /**
  * TODO
 */
-// TODO define BookDB functions and Book struct
+
 #include <iostream>
 #include <vector>
 #include <algorithm>
@@ -24,24 +27,23 @@
 using namespace std;
 
 typedef struct Book {
-    // TODO check what it wants write up says named ID
-    int named_ID;
+    int ID;
     int year;
     double rating;
 } Book;
 
-vector<Book> books;
+int addBook(int bookID, int year, double rating, vector<Book> &db);
 
-void printBook();
+int updateBook(int bookID, int year, double rating, vector<Book> &db);
 
-void addBook(int named_ID);
+int deleteBook(int bookID, vector<Book> &db);
 
-void deleteBook(int named_ID);
+vector<Book>* findBooks(int year, const vector<Book> &db);
 
-void findAndUpdateBook(int named_ID, int year, double rating);
+double calculateAverageRating(const vector<Book> &db);
 
-void calculateAvgBookRating();
+void print(const vector<Book> &db);
 
-void printAllBooksOfYear(int year);
+int sortDB(vector<Book> &db, int sortingMethod);
 
-void sortBooks(int sortOrder);
+#endif
