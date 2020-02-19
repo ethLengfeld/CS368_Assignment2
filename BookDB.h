@@ -32,18 +32,68 @@ typedef struct Book {
     double rating;
 } Book;
 
+/**
+ * 
+ * 
+ * @param int bookID - 
+ * @param int year -
+ * @param double rating -
+ * @param vector<Book> &db -
+ * @return int - 
+*/
 int addBook(int bookID, int year, double rating, vector<Book> &db);
 
+/**
+ * 
+ * 
+ * @param int bookID - 
+ * @param int year -
+ * @param double rating -
+ * @param vector<Book> &db -
+ * @return int - 
+*/
 int updateBook(int bookID, int year, double rating, vector<Book> &db);
 
+/**
+ * 
+ * 
+ * @param int bookID - 
+ * @param vector<Book> &db -
+ * @return int - 
+*/
 int deleteBook(int bookID, vector<Book> &db);
 
+/**
+ * 
+ * 
+ * @param int year -
+ * @param vector<Book> &db -
+ * @return vector<Book>* - 
+*/
 vector<Book>* findBooks(int year, const vector<Book> &db);
 
+/**
+ * 
+ * 
+ * @param vector<Book> &db -
+ * @return double - 
+*/
 double calculateAverageRating(const vector<Book> &db);
 
+/**
+ * 
+ * 
+ * @param vector<Book> &db -
+*/
 void print(const vector<Book> &db);
 
+/**
+ * 
+ * 
+ * @param vector<Book> &db -
+ * @param int sortingMethod - 
+ * @return int - 
+*/
 int sortDB(vector<Book> &db, int sortingMethod);
 
 #endif

@@ -18,7 +18,6 @@
 */
 #include "BookDB.h"
 
-
 // TODO
 int addBook(int bookID, int year, double rating, vector<Book> &db) {
 	if(bookID > 2) {
@@ -64,6 +63,7 @@ void print(const vector<Book> &db) {
 
 // TODO
 int sortDB(vector<Book> &db, int sortingMethod) {
+	// TODO create sorting methods
 	// error
 	return 1;
 }
