@@ -12,12 +12,12 @@ within BookDB.h and developed in BookDB.cpp.
 5. Enter commands
     Possible commands:
     - p 
-    - a <ID> <year> <rating>
-    - d <ID>
-    - u <ID> <year> <rating>
+    - a &lt;ID&rt; &lt;year&rt; &lt;rating&rt;
+    - d &lt;ID>
+    - u &lt;ID> <year> <rating>
     - c
-    - f <year>
-    - s <sort option>
+    - f &lt;year>
+    - s &lt;sort option>
     - q
 
 ## To Clean Program
