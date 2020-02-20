@@ -13,11 +13,11 @@ within BookDB.h and developed in BookDB.cpp.
     Possible commands:
     - p 
     - a &lt;ID&gt; &lt;year&gt; &lt;rating&gt;
-    - d &lt;ID>
-    - u &lt;ID> <year> <rating>
+    - d &lt;ID&gt;
+    - u &lt;ID&gt; &lt;year&gt; &lt;rating&gt;
     - c
-    - f &lt;year>
-    - s &lt;sort option>
+    - f &lt;year&gt;
+    - s &lt;sort option&gt;
     - q
 
 ## To Clean Program
