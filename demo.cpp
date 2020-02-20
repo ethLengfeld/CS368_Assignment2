@@ -42,7 +42,11 @@ int main() {
 		switch (currCommand) {
 
 			case 'p':
-				BOOKDB::print(books);
+				if(books.size() != 0) {
+					BOOKDB::print(books);
+				} else {
+					cout << "No entries" << endl;
+				}
 				break;
 
 

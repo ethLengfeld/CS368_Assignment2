@@ -83,14 +83,8 @@ double calculateAverageRating(const vector<Book> &db) {
 }
 
 void print(const vector<Book> &db) {
-	if(db.size() != 0) {
-
-		for (auto &currBook : db) {
-			cout << currBook.ID << ", " << currBook.year << ", " << currBook.rating << endl;
-		}
-
-	} else {
-		cout << "No entries" << endl;
+	for (auto &currBook : db) {
+		cout << currBook.ID << ", " << currBook.year << ", " << currBook.rating << endl;
 	}
 }
 

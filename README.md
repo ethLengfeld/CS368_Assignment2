@@ -27,4 +27,5 @@ Warning! This will delete the executable and will require rerunning 'make' to re
 ## Code Organization
 BookDB.h defines all possible methods available to add, update, find, and delete
 books in the book database. BookDB.cpp implements all functions defined in 
-BookDB.h. Finally, demo.cpp will handle all commands given during program execution.
+BookDB.h. Finally, demo.cpp will handle all commands given during program execution
+this is done through the use of the main() function.
