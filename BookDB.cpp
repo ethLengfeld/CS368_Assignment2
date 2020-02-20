@@ -14,12 +14,12 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 /**
- * TODO
+ * This class will implement the functions defined in the 
+ * BookDB.h. 
 */
 #include "BookDB.h"
 
 int addBook(int bookID, int year, double rating, vector<Book> &db) {
-
 	for (auto &currBook : db) {
 		if (currBook.ID == bookID) {
 			// error
@@ -57,7 +57,6 @@ int deleteBook(int bookID, vector<Book> &db) {
 }
 
 vector<Book>* findBooks(int year, const vector<Book> &db) {
-
 	vector<Book>* bookPtr = new vector<Book>;
 
 	for (auto &currBook : db) {
@@ -95,6 +94,14 @@ void print(const vector<Book> &db) {
 	}
 }
 
+/**
+ * PRIVATE SORTING METHOD
+ * Books sorted in order of increasing ID number.
+ * 
+ * @param const Book &a - first element to compare
+ * @param const Book &b - second element to compare
+ * @return bool - true or false
+*/
 bool sortingMethod1(const Book &a, const Book &b) {
 	if(a.ID < b.ID) {
 		return true;
@@ -103,6 +110,16 @@ bool sortingMethod1(const Book &a, const Book &b) {
 	}
 }
 
+/**
+ * PRIVATE SORTING METHOD
+ * Books sorted in order of increasing year. 
+ * Ties broken by putting smaller book IDs 
+ * before larger ones.
+ * 
+ * @param const Book &a - first element to compare
+ * @param const Book &b - second element to compare
+ * @return bool - true or false
+*/
 bool sortingMethod2(const Book &a, const Book &b) {
 	if(a.year < b.year) {
 		return true;
@@ -113,6 +130,16 @@ bool sortingMethod2(const Book &a, const Book &b) {
 	return a.ID < b.ID;
 }
 
+/**
+ * PRIVATE SORTING METHOD
+ * Books sorted in order of increasing rating. 
+ * Ties broken by putting smaller book IDs 
+ * before larger ones.
+ * 
+ * @param const Book &a - first element to compare
+ * @param const Book &b - second element to compare
+ * @return bool - true or false
+*/
 bool sortingMethod3(const Book &a, const Book &b) {
 	if(a.rating < b.rating) {
 		return true;
@@ -137,5 +164,3 @@ int sortDB(vector<Book> &db, int sortingMethod) {
 	// error
 	return 1;
 }
-
-
