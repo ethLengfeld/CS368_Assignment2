@@ -12,7 +12,7 @@ within BookDB.h and developed in BookDB.cpp.
 5. Enter commands
     Possible commands:
     - p 
-    - a &<ID&> <year> <rating>
+    - a <ID> <year> <rating>
     - d <ID>
     - u <ID> <year> <rating>
     - c
