@@ -1,3 +1,5 @@
+Author: Ethan Lengfeld - 9074020836
+
 # Assignment 2: BookDB
 The files in Assignment 2 consist of demo.cpp which is used as a test class to demo all methods defined
 within BookDB.h and developed in BookDB.cpp.
@@ -22,5 +24,7 @@ within BookDB.h and developed in BookDB.cpp.
 To remove executable and any .o files run the command 'make clean'
 Warning! This will delete the executable and will require rerunning 'make' to retest it
 
-
-Author: Ethan Lengfeld - 9074020836
+## Code Organization
+BookDB.h defines all possible methods available to add, update, find, and delete
+books in the book database. BookDB.cpp implements all functions defined in 
+BookDB.h. Finally, demo.cpp will handle all commands given during program execution.
